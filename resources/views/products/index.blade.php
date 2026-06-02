@@ -1,7 +1,4 @@
-@extends('layouts.crud')
-
-@section('title', 'Lista de produtos')
-@section('content')
+<x-app-layout>
 
 <div class="w-full max-w-4xl bg-white dark:bg-gray-800 p-6
 rounded-lg shadow mx-auto">
@@ -57,4 +54,4 @@ hover:bg-red-700">Excluir</a>
     </table>
 
 </div>
-@endsection
+</x-app-layout>

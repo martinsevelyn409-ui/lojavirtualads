@@ -1,9 +1,6 @@
-@extends('layouts.crud')
+<x-app-layout>
 
-@section('title', 'Cadastrar produto')
-@section('content')
-
-<form class="w-full max-w-md bg-white dark:bg-gray-800 p-6 rounded-lg
+<form class="w-full mx-auto max-w-md bg-white dark:bg-gray-800 p-6 rounded-lg
 shadow" action="{{ url('products/new') }}" method="POST">
 @csrf
 
@@ -16,17 +13,18 @@ shadow" action="{{ url('products/new') }}" method="POST">
         @endforeach
     </div>
     @endif
+    <x-input-label>Nome:</x-input-label>
+    <x-text-input id="name" name="name" type="text"></x-text-input>
+    
 
-    <label class="block mb-1 text-gray-700 dark:text-gray-300">Nome:</label>
-    <input class="w-full p-2 mb-4 rounded border dark:bg-gray-700 dark:text-white" required name="name" type="text" />
-    <label class="block mb-1 text-gray-700 dark:text-gray-300">Descrição:</label>
-    <input class="w-full p-2 mb-4 rounded border dark:bg-gray-700 dark:text-white" name="description" type="textarea" />
-    <label class="block mb-1 text-gray-700 dark:text-gray-300">Quantidade:</label>
-    <input class="w-full p-2 mb-4 rounded border dark:bg-gray-700 dark:text-white" name="quantity" type="number" />
-    <label class="block mb-1 text-gray-700 dark:text-gray-300">Preço:</label>
-    <input class="w-full p-2 mb-4 rounded border dark:bg-gray-700 dark:text-white" name="price" type="number" />
+    <x-input-label class="block mb-1 text-gray-700 dark:text-gray-300">Descrição:</x-input-label>
+    <x-text-input class="w-full p-2 mb-4 rounded border dark:bg-gray-700 dark:text-white" name="description" type="textarea"> </x-text-input>
+    <x-input-label class="block mb-1 text-gray-700 dark:text-gray-300">Quantidade:</x-input-label>
+    <x-text-input class="w-full p-2 mb-4 rounded border dark:bg-gray-700 dark:text-white" name="quantity" type="number"> </x-text-input>
+    <x-input-label class="block mb-1 text-gray-700 dark:text-gray-300">Preço:</x-input-label>
+    <x-text-input class="w-full p-2 mb-4 rounded border dark:bg-gray-700 dark:text-white" name="price" type="number"> </x-text-input>
 
-    <label class="block mb-1 text-gray-700 dark:text-gray-300">Tipo do produto:</label>
+    <x-input-label class="block mb-1 text-gray-700 dark:text-gray-300">Tipo do produto:></x-input-label>
 
     <select class="w-full p-2 mb-4 rounded border dark:bg-gray-700 dark:text-white" name="type_id">
         <option value="">Selecione</option>
@@ -42,4 +40,4 @@ shadow" action="{{ url('products/new') }}" method="POST">
     <input class="w-full p-2 rounded bg-blue-600 text-white" type="submit" value="Salvar" />
 </form>
 
-@endsection
+</x-app-layout>

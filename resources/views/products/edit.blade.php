@@ -1,3 +1,5 @@
+<x-app-layout>
+
 <form action="{{ url('products/update') }}" method="POST">
     @csrf
     <!-- campo oculto passando o ID como parâmetro no request -->
@@ -25,3 +27,5 @@ $product['description'] }}" /><br>
     </select><br><br>
     <input type="submit" value="Salvar" />
 </form>
+
+</x-app-layout>
